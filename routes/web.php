@@ -11,30 +11,6 @@
 |
 */
 
-use App\Image;
+Auth::routes();
 
-Route::get('/', function () {
-
-    $images = Image::all();
-
-    foreach ($images as $image) {
-        echo $image->image_path . "<br>";
-        echo $image->description . "<br>";
-        echo $image->users->name . ' ' . $image->users->surname . "<br>";
-
-        if (count($image->comments) >= 1) {
-            echo "<br><strong>Comentarios</strong><br>";
-            foreach ($image->comments as $comment) {
-                echo $comment->users->name . ' ' . $comment->users->surname . " : ";
-                echo $comment->content . "<br>";
-            }
-        }
-        echo "<br><strong>LIKES: </strong>".count($image->likes). "<br>";
-        foreach ($image->likes as $like) {
-            echo $like->users->name . ' ' . $like->users->surname . "<br>";
-        }
-        echo "<hr>";
-    }
-    die();
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');

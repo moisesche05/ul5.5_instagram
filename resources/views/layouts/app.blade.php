@@ -46,7 +46,7 @@
 
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li><a class="dropdown-item" href="">Mi Perfil</a></li>
-                                <li><a class="dropdown-item" href="">Configuración</a></li>
+                                <li><a class="dropdown-item" href="{{ route('config') }}">Configuración</a></li>
                                 <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

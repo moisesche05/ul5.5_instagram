@@ -35,12 +35,13 @@
                         <li class="nav-item active"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                     @else
-                        <li class="nav-item"><a class="nav-link" href="">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Subir Imagen</a></li>
+                        <li class="nav-item">@include('includes.avatar_navbar')</li>
 
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false" aria-haspopup="true" v-pre>
+                               aria-expanded="false" aria-haspopup="true">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 

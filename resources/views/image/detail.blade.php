@@ -32,7 +32,20 @@
                             <p class="m-0">{{ $image->description }}</p>
                         </div>
                         <div class="likes pl-4">
-                            <img src="{{ asset('images/heart-grey.png') }}" alt="" width="22">
+                            <?php $user_like = false; ?>
+
+                            @foreach($image->likes as $like)
+                                @if($like->users->id == Auth::user()->id)
+                                    <?php $user_like = true; ?>
+                                @endif
+                            @endforeach
+
+                            @if($user_like)
+                                <img src="{{ asset('images/heart-red.png') }}" data-id="{{ $image->id }}" alt="" width="17" class="btn-like">
+                            @else
+                                <img src="{{ asset('images/heart-grey.png') }}" data-id="{{ $image->id }}" alt="" width="17" class="btn-dislike">
+                            @endif
+                            <span>{{ count($image->likes) }}</span>
                             <span class="ml-2">Comentarios ({{ count($image->comments) }})</span>
                         </div>
                         <hr class="mx-4">

@@ -36,6 +36,7 @@
                         <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                     @else
                         <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('like.list') }}">Favoritas</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('image.create') }}">Subir Imagen</a></li>
                         <li class="nav-item">@include('includes.avatar_navbar')</li>
 
@@ -73,5 +74,6 @@
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

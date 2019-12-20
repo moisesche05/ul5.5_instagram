@@ -4,7 +4,7 @@
             <img src="{{ route('user.avatar',['filename'=>$image->users->image]) }}" alt=""
                  height="35" width="35" class="rounded-circle mr-2">
         @endif
-        <a href="{{ route('image.detail', ['id' => $image->id]) }}" class="text-secondary">
+        <a href="{{ route('user.profile', ['id' => $image->users->id]) }}" class="text-secondary">
             {{ $image->users->name.' '.$image->users->surname}}
             <span class="text-secondary">{{ ' | @'.$image->users->nick  }}</span>
         </a>
@@ -36,7 +36,7 @@
                 <img src="{{ asset('images/heart-grey.png') }}" data-id="{{ $image->id }}" alt="" width="17" class="btn-dislike">
             @endif
             <span>{{ count($image->likes) }}</span>
-            <a href="" class="btn btn-warning btn-sm ml-2">
+            <a href="{{ route('image.detail', ['id' => $image->id]) }}" class="btn btn-warning btn-sm ml-2">
                 Comentarios ({{ count($image->comments) }})
             </a>
         </div>

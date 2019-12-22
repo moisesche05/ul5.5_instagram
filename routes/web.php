@@ -24,6 +24,7 @@ Route::get('/up-imagen', 'ImageController@create')->name('image.create');
 Route::post('/image/save', 'ImageController@save')->name('image.save');
 Route::get('/image/file/{filename}', 'ImageController@getImage')->name('image.file');
 Route::get('/image/detail/{id}', 'ImageController@detail')->name('image.detail');
+Route::get('/image/delete/{id}', 'ImageController@delete')->name('image.delete');
 
 Route::post('/comment/save', 'CommentController@save')->name('comment.save');
 Route::get('/comment/delete/{id}', 'CommentController@delete')->name('comment.delete');

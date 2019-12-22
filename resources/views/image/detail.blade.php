@@ -50,10 +50,9 @@
                             <span>{{ count($image->likes) }}</span>
                             <span class="ml-2">Comentarios ({{ count($image->comments) }})</span>
                             @if(Auth::user() && Auth::user()->id == $image->users->id)
-                                <a href="" class="btn btn-sm btn-primary ml-1">Actualizar</a>
-{{--                                    {{ route('image.delete', ['id' => $image->id]) }}--}}
-                                <a href="" data-toggle="modal"
-                                   class="btn btn-sm btn-danger ml-1" data-target="#deleteModal">Borrar</a>
+                                <a href="{{ route('image.edit', ['id' => $image->id]) }}" class="btn btn-sm btn-primary ml-1">Actualizar</a>
+                                <button data-toggle="modal"
+                                   class="btn btn-sm btn-danger ml-1" data-target="#deleteModal">Borrar</button>
                             @endif
                         </div>
                         <hr class="mx-4">

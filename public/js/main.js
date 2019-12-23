@@ -48,4 +48,9 @@ window.addEventListener("load", function () {
     }
 
     dislike();
+
+    $('#buscador').submit(function () {
+        $(this).attr('action', url+"/user/index/"+$('#search').val());
+        $(this).submit();
+    });
 });

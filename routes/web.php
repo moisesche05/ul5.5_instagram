@@ -19,6 +19,7 @@ Route::get('/configuracion', 'UserController@config')->name('config');
 Route::post('/user/update', 'UserController@update')->name('user.update');
 Route::get('/user/avatar/{filename}', 'UserController@getImage')->name('user.avatar');
 Route::get('/user/profile/{id}', 'UserController@profile')->name('user.profile');
+Route::get('/user/index/{search?}', 'UserController@index')->name('user.index');
 
 Route::get('/up-imagen', 'ImageController@create')->name('image.create');
 Route::post('/image/save', 'ImageController@save')->name('image.save');
